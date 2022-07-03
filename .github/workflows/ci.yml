@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build-test:
-    runs-on: ubuntu-latest
+    runs-on: php:8
 
     steps:
       - uses: actions/checkout@v2
