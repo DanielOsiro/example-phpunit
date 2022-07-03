@@ -4,12 +4,15 @@ on: [push]
 
 jobs:
   build-test:
-    runs-on: php:8
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
 
-      - uses: php-actions/composer@v5
+      - name: Install dependencies
+        uses: php-actions/composer@v6
+        with:
+          php_version: "8.0"
 
       - name: PHPUnit Tests
         uses: php-actions/phpunit@v2
